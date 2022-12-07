@@ -1,3 +1,3 @@
 ﻿  Process.cpp
-E:\Data\visual_studio\Operating_system\Scheduler_RR_and_FIFO\Process.cpp(328,26): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-E:\Data\visual_studio\Operating_system\Scheduler_RR_and_FIFO\Process.cpp(343,28): error C2106: '=': left operand must be l-value
+E:\Data\visual_studio\Operating_system\Scheduler_RR_and_FIFO\Process.cpp(329,26): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Scheduler_RR_and_FIFO.vcxproj -> E:\Data\visual_studio\Operating_system\Scheduler_RR_and_FIFO\x64\Debug\Scheduler_RR_and_FIFO.exe

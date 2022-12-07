@@ -7,7 +7,7 @@ int main()
 	vector<Process> p;
 	int n;
 	vector <int> burst_time_remaining;
-
+		
 	cout << "Enter the number of processes: ";
 	cin >> n;
 

@@ -172,9 +172,9 @@ int max(int a, int b)
 		return b;
 }
 
+
 void Process::Round_Robin(vector <Process> p, vector <int> burst_time_remaining, int n)
 {
-	cout << "RR" << endl;
 	int time_quantum;
 
 	float cpu_utilisation;
@@ -292,7 +292,7 @@ void Process::Round_Robin(vector <Process> p, vector <int> burst_time_remaining,
 
 void Input_First_In_First_Out(vector <Process>& p, int n)
 {
-	for (int i = 0; i < p.size(); i++)
+	for (int i = 0; i < n; i++)
 	{
 		Process pk(i + 1, 0, 0);
 
@@ -309,11 +309,13 @@ void Input_First_In_First_Out(vector <Process>& p, int n)
 		cout << endl;
 		p.push_back(pk);
 	}
+	Process pk;
+	pk.SetArrival_time(9999);
+	p.push_back(pk);
 }
 
 void Process::FIFO(vector <Process> p, int n)
 {
-	cout << "FIFO" << endl;
 	int Total_wait_time = 0;
 	int Total_turn_time = 0;
 	int count = 0;
@@ -321,8 +323,7 @@ void Process::FIFO(vector <Process> p, int n)
 	int smallest;
 
 	Input_First_In_First_Out(p, n);
-	p[p.size() - 1].SetArrival_time(9999);
-
+	
 	while (count != n)
 	{
 		smallest = p.size() - 1;
@@ -338,9 +339,9 @@ void Process::FIFO(vector <Process> p, int n)
 		Total_wait_time += time - p[smallest].GetArrival_time() - p[smallest].GetBurst_time();
 		Total_turn_time += time - p[smallest].GetArrival_time();
 
-		cout << "P" << smallest + 1 << "\t" << time - p[smallest].GetArrival_time() << "\t" << time - p[smallest].GetArrival_time() - p[smallest].GetBurst_time();
+		cout << "P" << smallest + 1 << "\t" << time - p[smallest].GetArrival_time() << "\t" << time - p[smallest].GetArrival_time() - p[smallest].GetBurst_time() << endl;
 		
-		p[smallest].GetBurst_time() = 0;
+		p[smallest].SetBurst_time(0);
 		count++;
 	}
 	
